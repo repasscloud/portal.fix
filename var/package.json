@@ -39,6 +39,9 @@
     "tslib": "2.0.3",
     "zone.js": "0.11.1"
   },
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.1001.7",
     "@angular/cli": "10.1.7",
