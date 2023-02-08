@@ -15,12 +15,15 @@ COPY [ "var/package.json", "/app/package.json" ]
 #   npm install @angular/animations@13.0.0 && \
 #   npm install @angular/forms@13.0.0 && \
 #   npm install @angular/cdk@13.0.0
-RUN npm install --no-optional --cache /tmp/empty-cache --save
+
+
+
 RUN npm i npm-install-peers -D
+RUN npm install --no-optional --cache /tmp/empty-cache --save
+
 
 # Copy remaining data
 COPY [ "OptechX", "/app" ]
-RUN cat package-lock.json
 
 RUN npm ng build
 
