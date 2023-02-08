@@ -1,0 +1,102 @@
+<hr class="hr">
+<div class="row ml-4">
+  <div class="col-md-12">
+    <h3 class="font-weight-bold">Profile Management</h3>
+  </div>
+</div>
+<div class="row ml-4 mr-4 mt-2 pb-4">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+        </div>
+        <form [formGroup]="updateProfileForm">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="font-weight-bold">Email</label>
+                <input type="text" class="form-control p-4" formControlName="email"/>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold">Password</label>
+                <input type="password" class="form-control p-4" formControlName="password"/>
+                <div class="text-danger font-weight-bold mt-3"
+                    *ngIf="updateProfileForm.controls['password'].hasError('required') && updateProfileForm.controls['password'].touched ">
+                    Password is required
+                  </div>
+                  <div class="text-danger font-weight-bold" *ngIf="updateProfileForm.controls['password'].hasError('minlength') && updateProfileForm.controls['password'].touched">
+                    Please enter at least 8 characters.
+                  </div>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold">Company</label>
+                <input type="text" class="form-control p-4" formControlName="company"/>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold">First Name</label>
+                <input type="text" class="form-control p-4" formControlName="firstName"/>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold">Last Name</label>
+                <input type="text" class="form-control p-4" formControlName="lastName"/>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold">City</label>
+                <input type="text" class="form-control p-4" formControlName="city"/>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold">Post Code / Zip</label>
+                <input type="text" class="form-control p-4" formControlName="postCode"/>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="font-weight-bold">Tax ID / VAT</label>
+                <input type="text" class="form-control p-4" formControlName="taxId"/>
+              </div>
+              <div class="form-group">
+                <label class="font-size">Confirm Password</label>
+                <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Enter your confirm password"/>
+                <div class="text-danger font-weight-bold"
+                  *ngIf="updateProfileForm.controls['confirmPassword'].hasError('required') && updateProfileForm.controls['confirmPassword'].touched ">
+                  Confirm Password is required
+                </div>
+                <div class="text-danger font-weight-bold mt-3"
+                  *ngIf="updateProfileForm.controls['confirmPassword'].hasError('ConfirmPassword') && updateProfileForm.controls['confirmPassword'].touched">
+                  Passwords do not match
+                </div>  
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold">Phone Number</label>
+                <input type="text" class="form-control p-4" formControlName="phone"/>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold">Address</label>
+                <input type="text" class="form-control p-4" formControlName="address"/>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold">State</label>
+                <input type="text" class="form-control p-4" formControlName="state"/>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold">Country</label>
+                <select class="form-control p4" formControlName="country">
+                  <option value="">SELECT COUNTRY</option>
+                  <option [value]="c.id" *ngFor="let c of countries">{{c.name}}</option>
+                </select>
+              </div>
+              <div class="form-group mt-2">
+                <label class="font-weight-bold">Notifications</label><br>
+                <input type="radio" class="p-3" [value]="true" formControlName="notifications"><span class="ml-3">On</span>
+                <input type="radio" class="ml-3" [value]="false" formControlName="notifications"><span class="ml-3">Off</span>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary p-3" (click)="updateUserProfile(user.id)">SAVE</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
