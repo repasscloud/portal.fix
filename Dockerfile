@@ -17,13 +17,11 @@ COPY [ "var/package.json", "/app/package.json" ]
 #   npm install @angular/cdk@13.0.0
 
 
-
-RUN npm i npm-install-peers -D
 RUN npm install --no-optional --cache /tmp/empty-cache --save
-
+RUN npm i npm-install-peers -D
 
 # Copy remaining data
 COPY [ "OptechX", "/app" ]
 
-RUN npm ng build
+RUN npm run ng build
 
