@@ -4,6 +4,7 @@ WORKDIR /app
 
 # Install the old packages first
 COPY [ "var/package.json", "/app/package.json" ]
+RUN npm install @angular/core@9.0.0
 RUN npm install --no-optional --cache /tmp/empty-cache --save
 
 # Copy remaining data
