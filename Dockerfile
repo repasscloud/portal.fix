@@ -20,5 +20,5 @@ RUN npm i npm-install-peers -D
 
 # Copy remaining data
 COPY [ "OptechX", "/app" ]
-RUN ls -l
+RUN cat package-lock.json
 

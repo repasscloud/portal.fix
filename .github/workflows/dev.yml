@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 env:
-  DOCKER_VER: "2.2"
+  DOCKER_VER: "2.3a"
   DOCKER_TAG: "repasscloud/optechx.portal"
 
 jobs:
@@ -31,3 +31,8 @@ jobs:
           DVER: ${{ env.DOCKER_VER }}
         shell: bash
 
+      - name: Archive package-lock.json
+        uses: actions/upload-artifact@v3
+        with:
+          name: package-lock
+          path: output/test/code-coverage.html
