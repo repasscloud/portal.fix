@@ -1,4 +1,4 @@
-FROM node:12.18.1-alpine
+FROM node:12.18.1
 ARG NG_CLI_ANALYTICS="false"
 WORKDIR /app
 
