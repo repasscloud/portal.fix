@@ -11,7 +11,10 @@ RUN npm install tslib@1.10.0 && \
   npm install @angular/forms@9.0.0 && \
   npm install @angular/localize@9.0.0 && \
   npm install popper.js@1.16.1 && \
-  npm install @angular/common@13.0.0
+  npm install @angular/common@13.0.0 && \
+  npm install @angular/animations@13.0.0 && \
+  npm install @angular/forms@13.0.0 && \
+  npm install @angular/cdk@13.0.0
 RUN npm install --no-optional --cache /tmp/empty-cache --save
 
 # Copy remaining data
