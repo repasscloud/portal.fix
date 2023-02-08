@@ -22,3 +22,5 @@ RUN npm i npm-install-peers -D
 COPY [ "OptechX", "/app" ]
 RUN cat package-lock.json
 
+RUN npm ng build
+
